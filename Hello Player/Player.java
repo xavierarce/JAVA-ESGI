@@ -27,16 +27,19 @@ public class Player {
     Player p = new Player("Xavier");
     p.greet();
 
-    Weapon sword = new Weapon(10, 90);
+    Weapon sword = new Weapon("Épée", 10, 90);
 
     int firstHit = sword.rollDamage();
+    System.out.println(sword.getName() + " inflige " + firstHit + " dégâts à " + p.name);
     p.takeDamage(firstHit);
     assert p.isAlive() : "p devrait encore être en vie après " + firstHit + " dégâts";
 
     int secondHit = sword.rollDamage();
+    System.out.println(sword.getName() + " inflige " + secondHit + " dégâts à " + p.name);
     p.takeDamage(secondHit);
     assert !p.isAlive() : "p aurait dû être KO après " + secondHit + " dégâts";
 
     System.out.println("Le joueur est-il en vie ? " + p.isAlive());
   }
+
 }
