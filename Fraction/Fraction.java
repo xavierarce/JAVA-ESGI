@@ -1,5 +1,3 @@
-import MathUtils
-
 public class Fraction {
   private final int num; // numérateur
   private final int den; // dénominateur (>0)
@@ -9,13 +7,12 @@ public class Fraction {
       throw new IllegalArgumentException("Le dénominateur ne peut pas être zéro.");
     }
 
-    // Gestion du signe : on déplace le signe vers le numérateur
     if (den < 0) {
       num = -num;
       den = -den;
     }
 
-    int pgcd = MathUtils.pgcd(Math.abs(num), den); // On simplifie
+    int pgcd = MathUtils.pgcd(Math.abs(num), den);
     this.num = num / pgcd;
     this.den = den / pgcd;
   }
@@ -23,7 +20,7 @@ public class Fraction {
   public Fraction add(Fraction other) {
     int newNum = this.num * other.den + other.num * this.den;
     int newDen = this.den * other.den;
-    return new Fraction(newNum, newDen); // auto-simplification dans le constructeur
+    return new Fraction(newNum, newDen);
   }
 
   public Fraction multiply(Fraction other) {
@@ -39,7 +36,6 @@ public class Fraction {
     return num + "/" + den;
   }
 
-  // Bonus : égalité
   @Override
   public boolean equals(Object obj) {
     if (this == obj)
@@ -50,9 +46,7 @@ public class Fraction {
     return this.num == f.num && this.den == f.den;
   }
 
-  // Bonus : comparateur (optionnel)
   public int compareTo(Fraction other) {
-    // Cross multiplication to compare without floating point
     return Integer.compare(this.num * other.den, other.num * this.den);
   }
 
@@ -62,9 +56,10 @@ public class Fraction {
 
     System.out.println("f + g = " + f.add(g)); // 5/6
     System.out.println("f * g = " + f.multiply(g)); // 1/9
-    System.out.println("f en double = " + f.toDouble()); // ~0.666...
+    System.out.println("f en double = " + f.toDouble());
 
     assert f.add(g).toString().equals("5/6") : "Addition incorrecte";
     assert f.multiply(g).toString().equals("1/9") : "Multiplication incorrecte";
+    System.out.println("Tous les tests sont passés.");
   }
 }
