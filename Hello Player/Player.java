@@ -26,7 +26,10 @@ public class Player {
   public static void main(String[] args) {
     Player p = new Player("Xavier");
     p.greet();
+    p.takeDamage(85);
+    assert p.isAlive() : "p devrait encore être en vie après 85 dégâts";
     p.takeDamage(15);
+    assert !p.isAlive() : "p aurait dû être KO";
     System.out.println("Le joueur est-il en vie ? " + p.isAlive());
   }
 }
