@@ -1,5 +1,3 @@
-import Fraction.MathUtils;
-
 public class Fraction {
   private final int num;
   private final int den;
@@ -56,8 +54,8 @@ public class Fraction {
     Fraction f = new Fraction(2, 3);
     Fraction g = new Fraction(1, 6);
 
-    System.out.println("f + g = " + f.add(g)); // 5/6
-    System.out.println("f * g = " + f.multiply(g)); // 1/9
+    System.out.println("f + g = " + f.add(g));
+    System.out.println("f * g = " + f.multiply(g));
     System.out.println("f en double = " + f.toDouble());
 
     assert f.add(g).toString().equals("5/6") : "Addition incorrecte";

@@ -1,7 +1,4 @@
-package Fraction;
-
 public class MathUtils {
-
   public static int pgcd(int a, int b) {
     a = Math.abs(a);
     b = Math.abs(b);
@@ -12,5 +9,4 @@ public class MathUtils {
     }
     return a;
   }
-
 }
