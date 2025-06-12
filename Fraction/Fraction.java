@@ -1,6 +1,8 @@
+import Fraction.MathUtils;
+
 public class Fraction {
-  private final int num; // numérateur
-  private final int den; // dénominateur (>0)
+  private final int num;
+  private final int den;
 
   public Fraction(int num, int den) {
     if (den == 0) {
