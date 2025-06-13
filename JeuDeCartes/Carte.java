@@ -23,6 +23,10 @@ public abstract class Carte {
     if (obj == null || getClass() != obj.getClass())
       return false;
     Carte other = (Carte) obj;
+
+    System.out
+        .println("Comparing " + this.nom + " (" + this.valeur + ") with " + other.nom + " (" + other.valeur + ")");
+
     return this.nom.equals(other.nom) && this.valeur == other.valeur;
   }
 

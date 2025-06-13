@@ -17,4 +17,17 @@ public class CarteSpecial extends Carte {
   public String toString() {
     return "Carte Spéciale: " + nom + " (Effet: " + effet + ")";
   }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!super.equals(obj))
+      return false;
+    if (!(obj instanceof CarteSpecial))
+      return false;
+    CarteSpecial other = (CarteSpecial) obj;
+    // Print debug information
+    System.out.println("Comparing CarteSpecial " + this.effet + " with " + other.effet);
+    return this.effet.equals(other.effet);
+  }
+
 }
