@@ -1,4 +1,4 @@
-package tpbibliotheque;
+package Bibliotheque;
 
 import java.time.*;
 

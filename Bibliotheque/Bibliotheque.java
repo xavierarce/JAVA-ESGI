@@ -1,4 +1,4 @@
-package tpbibliotheque;
+package Bibliotheque;
 
 import java.util.*;
 
@@ -17,8 +17,8 @@ public class Bibliotheque {
     public void ajouterLivre(Livre livre) {
         livres.put(livre.getIsbn(), livre);
         livresParAuteur
-            .computeIfAbsent(livre.getAuteur(), k -> new ArrayList<>())
-            .add(livre);
+                .computeIfAbsent(livre.getAuteur(), k -> new ArrayList<>())
+                .add(livre);
     }
 
     public Livre rechercherParIsbn(String isbn) {
@@ -73,7 +73,7 @@ public class Bibliotheque {
 
         if (livre.estReserve()) {
             System.out.println(" Le livre est réservé pour : " + livre.getUtilisateurReserve());
-            
+
         }
 
         emprunts.remove(nomUtilisateur);

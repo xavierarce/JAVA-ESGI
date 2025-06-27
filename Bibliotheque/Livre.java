@@ -1,4 +1,4 @@
-package tpbibliotheque;
+package Bibliotheque;
 
 public class Livre {
     private final String isbn;

@@ -1,4 +1,4 @@
-package tpbibliotheque;
+package Bibliotheque;
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
@@ -22,12 +22,14 @@ public class Emprunt {
     }
 
     public boolean estEnRetard() {
-        if (dateRetourReelle == null) return false;
+        if (dateRetourReelle == null)
+            return false;
         return dateRetourReelle.isAfter(dateRetour);
     }
 
     public long joursDeRetard() {
-        if (!estEnRetard()) return 0;
+        if (!estEnRetard())
+            return 0;
         return ChronoUnit.DAYS.between(dateRetour, dateRetourReelle);
     }
 
